@@ -1,0 +1,19 @@
+<h1>Show</h1>
+<ul>
+    <li>title: <%= @article.title %></li>
+    <li>body: <%= @article.body %></li>
+    <li><%= link_to "Edit", edit_article_path(@article) %></li>
+    <li><%= link_to "Destroy", article_path(@article), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are You Sure?"
+    } %></li>
+</ul>
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Add Comment</h2>
+<%= render 'comments/form' %>
+
+<br/>
+<a href="/articles">Articles</a>

@@ -1,0 +1,10 @@
+<% unless comment.archived? %>
+<ul>
+    <li>commenter: <%= comment.commenter %></li>
+    <li>body: <%= comment.body %></li>
+    <li><%= link_to "Destory Comment", [comment.article, comment], data: {
+        turbo_method: :delete,
+        turbo_confirm: 'Are You Sure?'
+    } %></li>
+</ul>
+<% end %>
